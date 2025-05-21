@@ -11,6 +11,37 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { Rocket } from "lucide-react"
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      delay: i * 0.2,
+    },
+  }),
+}
+
+const titleVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+}
+
+const rocketVariants = {
+  initial: { y: 0 },
+  animate: {
+    y: [0, -10, 0],
+    transition: {
+      duration: 1.5,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+}
 
 export function ExperienceSection() {
   const [openModalId, setOpenModalId] = useState<number | null>(null)
@@ -39,17 +70,40 @@ export function ExperienceSection() {
   ]
 
   return (
-    <section id="experience" className="py-20 container">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Professional Experience</h2>
+    <section id="experience" className="py-20 container relative">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={titleVariants}
+        className="text-center mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 flex justify-center items-center gap-2">
+          Professional Experience
+          <motion.span
+            variants={rocketVariants}
+            initial="initial"
+            animate="animate"
+          >
+            <Rocket className="text-primary w-6 h-6" />
+          </motion.span>
+        </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
           My career journey and the companies and programs that have shaped my engineering path.
         </p>
-      </div>
+      </motion.div>
 
       <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
         {experiences.map((experience, index) => (
-          <div key={experience.id} className="relative flex items-start md:justify-center">
+          <motion.div
+            key={experience.id}
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            className="relative flex items-start md:justify-center"
+          >
             <div className="absolute left-0 md:left-1/2 mt-1.5 h-3 w-3 -translate-x-1/2 rounded-full border bg-primary"></div>
 
             <Card className={`w-full md:w-[calc(50%-2.5rem)] ${index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"}`}>
@@ -72,9 +126,12 @@ export function ExperienceSection() {
                   ))}
                 </div>
                 {experience.hasCertificate && (
-                  <Dialog open={openModalId === experience.id} onOpenChange={() => setOpenModalId(openModalId === experience.id ? null : experience.id)}>
+                  <Dialog
+                    open={openModalId === experience.id}
+                    onOpenChange={() => setOpenModalId(openModalId === experience.id ? null : experience.id)}
+                  >
                     <DialogTrigger asChild>
-                      <Button variant="outline">View Certificate</Button>
+                      <Button variant="outline">VIEW CERTIFICATE</Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-4xl max-h-[90vh] overflow-hidden">
                       <DialogHeader>
@@ -94,7 +151,7 @@ export function ExperienceSection() {
                 )}
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

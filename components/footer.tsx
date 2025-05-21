@@ -12,7 +12,7 @@ export function Footer() {
               <span className="text-primary">RR Dela Merced</span>
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
-              © {new Date().getFullYear()} Rommel Dela Merced. All rights reserved.
+              © {new Date().getFullYear()} RR Dela Merced. All rights reserved.
             </p>
           </div>
 

@@ -1,25 +1,78 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Download } from "lucide-react"
+'use client';
+
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function HeroSection() {
   return (
     <section id="home" className="py-20 md:py-32 container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div className="space-y-6">
-          <p className="text-xl text-muted-foreground">
+        {/* Left Column - Animated Text Content */}
+        <motion.div
+          className="space-y-6"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <motion.p
+            className="text-xl text-muted-foreground"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+          >
             Hello my name is <strong>Rommel Rudolf Dela Merced</strong> and I am a
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            <span className="text-primary">Software Engineer</span>
-          </h1>
-          <p className="text-xl text-muted-foreground">
+          </motion.p>
+
+          <motion.h1
+            className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <span className="text-primary inline-flex items-center">
+              Software Engineer
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="ml-2 h-10 w-10 text-white"
+                animate={{
+                  rotate: [0, 20, -20, 20, -20, 0],
+                  scale: [1, 1.2, 1, 1.2, 1, 1],
+                  opacity: [1, 0.7, 1, 0.7, 1, 1],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 3,
+                  ease: "easeInOut",
+                }}
+              >
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+              </motion.svg>
+          </span>
+          </motion.h1>
+
+          <motion.p
+            className="text-xl text-muted-foreground"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
             I am passionate about crafting web applications that combine thoughtful frontend design and solid backend
             architecture to deliver seamless and intuitive user experiences. While I don’t label myself strictly as a
             full-stack developer, I thrive on bridging the gap between user needs and technical implementation to build
             reliable and engaging software.
-          </p>
-          <div className="flex gap-2">
+          </motion.p>
+
+          <motion.div
+            className="flex gap-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
             <Button asChild>
               <a href="#contact">Contact Me</a>
             </Button>
@@ -32,30 +85,47 @@ export function HeroSection() {
                 Download CV
               </a>
             </Button>
-          </div>
-          <div className="flex gap-4 pt-4">
+          </motion.div>
+
+          <motion.div
+            className="flex gap-4 pt-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7 }}
+          >
             <Button variant="ghost" size="icon" asChild>
               <a href="https://github.com/DMR0M" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
+                <Github className="h-8 w-8" />
                 <span className="sr-only">GitHub</span>
               </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <a href="https://www.linkedin.com/in/rommel-rudolf-dela-merced-943970233/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
+              <a
+                href="https://www.linkedin.com/in/rommel-rudolf-dela-merced-943970233/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+            <Linkedin className="h-8 w-8" />
+              <span className="sr-only">LinkedIn</span>
+            </a>
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <a href="mailto:rommeldm87@gmail.com">
-                <Mail className="h-5 w-5" />
+                <Mail className="h-8 w-8" />
                 <span className="sr-only">Email</span>
               </a>
             </Button>
-          </div>
-        </div>
-        <div className="flex justify-center md:justify-end">
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary">
+          </motion.div>
+        </motion.div>
+
+        {/* Right Column - Animated Image */}
+        <motion.div
+          className="flex justify-center md:justify-end"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary shadow-lg">
             <Image
               src="/profile.jpg?height=320&width=320"
               alt="Developer portrait"
@@ -64,8 +134,8 @@ export function HeroSection() {
               priority
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
-  )
+  );
 }
