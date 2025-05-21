@@ -5,7 +5,7 @@ import { SkillsSection } from "@/components/skills-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-static'
 
 export default function Home() {
   return (

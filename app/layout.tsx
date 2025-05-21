@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import "@/app/globals.css"
 import type { Metadata } from "next"
 
+export const dynamic = 'force-static'
+
 export const metadata: Metadata = {
   title: "Full-Stack Developer Portfolio",
   description: "A showcase of my projects and professional experience as a full-stack developer.",
