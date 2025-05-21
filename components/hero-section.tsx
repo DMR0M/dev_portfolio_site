@@ -1,12 +1,15 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Download } from "lucide-react"
 
 export function HeroSection() {
   return (
     <section id="home" className="py-20 md:py-32 container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6">
+          <p className="text-xl text-muted-foreground">
+            Hello my name is <strong>Rommel Rudolf Dela Merced</strong> and I am a
+          </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="text-primary">Software Engineer</span>
           </h1>
@@ -22,6 +25,12 @@ export function HeroSection() {
             </Button>
             <Button variant="outline" asChild>
               <a href="#projects">View Projects</a>
+            </Button>
+            <Button variant="secondary" asChild>
+              <a href="/RommelRudolf_DelaMerced_Resume.pdf" download>
+                <Download className="mr-2 h-5 w-5" />
+                Download CV
+              </a>
             </Button>
           </div>
           <div className="flex gap-4 pt-4">
