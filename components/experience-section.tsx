@@ -27,7 +27,7 @@ export function ExperienceSection() {
     },
     {
       id: 2,
-      role: "Web Development Trainee",
+      role: "Web Developer",
       company: "Uplift Code Camp",
       period: "2024 - 2025",
       description:

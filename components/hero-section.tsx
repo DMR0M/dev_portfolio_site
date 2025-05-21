@@ -19,7 +19,7 @@ export function HeroSection() {
             full-stack developer, I thrive on bridging the gap between user needs and technical implementation to build
             reliable and engaging software.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-2">
             <Button asChild>
               <a href="#contact">Contact Me</a>
             </Button>
@@ -28,7 +28,7 @@ export function HeroSection() {
             </Button>
             <Button variant="secondary" asChild>
               <a href="/RommelRudolf_DelaMerced_Resume.pdf" download>
-                <Download className="mr-2 h-5 w-5" />
+                <Download className="mr-2 h-4 w-4" />
                 Download CV
               </a>
             </Button>

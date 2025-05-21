@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Code, Database, Globe, Layout, Server, Terminal, Smartphone, Wrench } from "lucide-react"
+import { Code, Database, Globe, Layout, Server, Terminal, Wrench } from "lucide-react"
 
 export function SkillsSection() {
   const skillCategories = [
@@ -7,13 +7,13 @@ export function SkillsSection() {
       id: 1,
       title: "Frontend Development",
       icon: <Layout className="h-8 w-8 text-primary" />,
-      skills: ["React", "HTML5/CSS3", "Tailwind CSS"],
+      skills: ["HTML5/CSS3", "Javascript", "React JS", "Bootstrap5", "Tailwind CSS"],
     },
     {
       id: 2,
       title: "Backend Development",
       icon: <Server className="h-8 w-8 text-primary" />,
-      skills: ["Node.js", "Express", "Python", "FastAPI", "REST API Design"],
+      skills: ["Node JS", "Express", "Python", "FastAPI", "REST API Design"],
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ export function SkillsSection() {
       id: 6,
       title: "Web Technologies & Frameworks",
       icon: <Globe className="h-8 w-8 text-primary" />,
-      skills: ["Django", "Firebase", "Supabase"],
+      skills: ["React JS", "Express", "Django", "Firebase", "Supabase"],
     },
     {
       id: 7,
