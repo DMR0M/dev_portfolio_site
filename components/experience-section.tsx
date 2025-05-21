@@ -104,9 +104,10 @@ export function ExperienceSection() {
             viewport={{ once: true, amount: 0.1 }}
             className="relative flex items-start md:justify-center"
           >
-            <div className="absolute left-0 md:left-1/2 mt-1.5 h-3 w-3 -translate-x-1/2 rounded-full border bg-primary"></div>
+            <div className="absolute left-0 md:left-1/2 mt-1.5 h-5 w-5 -translate-x-1/2 rounded-full border-2 border-primary bg-primary shadow-sm"></div>
 
-            <Card className={`w-full md:w-[calc(50%-2.5rem)] ${index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"}`}>
+
+            <Card className={`w-full md:w-[calc(50%-2.5rem)] border border-gray-200 shadow-sm ${index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"}`}>
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>

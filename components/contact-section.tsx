@@ -121,7 +121,7 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <Card>
+          <Card className="border border-gray-200 shadow-sm">
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>
@@ -165,7 +165,7 @@ export function ContactSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <Card>
+          <Card className="border border-gray-200 shadow-sm">
             <CardHeader>
               <CardTitle>Send Me a Message</CardTitle>
               <CardDescription>
