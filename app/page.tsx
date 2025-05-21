@@ -1,0 +1,21 @@
+import { HeroSection } from "@/components/hero-section"
+import { ProjectsSection } from "@/components/projects-section"
+import { ExperienceSection } from "@/components/experience-section"
+import { SkillsSection } from "@/components/skills-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
+
+export const dynamic = "force-dynamic";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-background">
+      <HeroSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <ContactSection />
+      <Footer />
+    </div>
+  )
+}
