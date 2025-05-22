@@ -54,7 +54,7 @@ export function ExperienceSection() {
       period: "2022 - 2025",
       description:
         "From planning to deployment, I persevered through every phase of the software development lifecycle—designing scalable solutions, engineering core features, fixing critical bugs, and testing thoroughly to ensure product reliability. I take pride in the positive feedback and satisfaction received from clients who continue to trust the software I’ve helped build.",
-      technologies: ["Java", "Python", "PostgreSQL", "SpringBoot", "Hibernate", "Linux", "Shell Scripting"],
+      technologies: ["Java", "Python", "SQL", "PostgreSQL", "SpringBoot", "Hibernate", "Linux", "Shell Scripting"],
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ export function ExperienceSection() {
       period: "2024 - 2025",
       description:
         "Completed an immersive full-stack web development bootcamp where I honed my frontend and backend skills using modern web technologies. I built multiple projects using the MERN stack, applying best practices in coding, component design, and RESTful API development.",
-      technologies: ["MongoDB", "Express", "React", "Node.js", "HTML/CSS", "Javascript", "Firebase"],
+      technologies: ["MongoDB", "Express", "React", "Node.js", "REST APIs", "HTML/CSS", "Javascript", "Firebase"],
       hasCertificate: true,
       certificatePDF: "/RRADM_FSW_Certificate_of_Completion_2025.pdf",
     },

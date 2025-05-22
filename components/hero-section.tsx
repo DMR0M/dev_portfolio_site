@@ -31,28 +31,7 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="text-primary inline-flex items-center">
-              Software Engineer
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                className="ml-2 h-10 w-10 text-white"
-                animate={{
-                  rotate: [0, 20, -20, 20, -20, 0],
-                  scale: [1, 1.2, 1, 1.2, 1, 1],
-                  opacity: [1, 0.7, 1, 0.7, 1, 1],
-                }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 3,
-                  ease: "easeInOut",
-                }}
-              >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z" />
-              </motion.svg>
-          </span>
+            <span className="text-primary inline-flex items-center">Software Engineer</span>
           </motion.h1>
 
           <motion.p
