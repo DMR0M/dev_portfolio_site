@@ -59,7 +59,7 @@ export function HeroSection() {
               <a href="#projects">View Projects</a>
             </Button>
             <Button variant="secondary" asChild>
-              <a href="/Rommel_Rudolf_DelaMerced_Software_Engineer.pdf" download>
+              <a href="/RR_DelaMerced_CV_1.pdf" download>
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
               </a>
